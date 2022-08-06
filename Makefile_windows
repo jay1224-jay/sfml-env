@@ -1,0 +1,12 @@
+
+LIB_DIR = C:\Users\88698\Documents\SFML-2.5.1\lib
+LIBS = -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lwinmm -lgdi32
+INCLUDE_DIR = C:\Users\88698\Documents\SFML-2.5.1\include
+NO_CONSOLE = -mwindows
+
+
+main: main.o
+	g++ main.o -o main -L$(LIB_DIR) $(LIBS)
+
+main.o: main.cpp
+	g++ -c main.cpp -DSFML_STATIC -I$(INCLUDE_DIR)
